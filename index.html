@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo App</title>
+    <link rel="icon" type="image/x-icon" href="./images/todo-icon.jpg">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="container mx-auto">
+
+    <header class="p-10">
+        <!-- Title of todo app -->
+        <h2 class="text-5xl font-extrabold text-center">Todo List✋📒</h2>
+    </header>
+    <main>
+        <!-- input todo -->
+        <section class="flex justify-center gap-3">
+            <input type="text" placeholder="Type here" class="input input-bordered input-success w-full max-w-xs" id="take-todo"/>
+            <button class="btn btn-outline btn-success " id="add-task">Add Task</button>
+        </section>
+
+        <!-- Task added header-->
+        <section class="grid grid-cols-3 my-3 text-xl text-stone-500">
+            <p class="text-center">Number</p>
+            <p class="text-center">Task Description</p>
+            <p class="text-center">Post Task Actions</p>
+        </section>
+        <hr>
+        <!-- Task list -->
+        <section id="task-list">
+            <!-- task -->
+            <!-- <div class="grid grid-cols-3 gap-3 justify-center items-center" >
+                <p class="text-center">1</p>
+                <p class="text-center">PH Conceptual Session Homework</p>
+                <div class="text-center">
+                <button class="btn btn-success">Done</button>
+            </div>
+            </div>
+            <hr> -->
+        </section>
+
+        <div class="flex justify-center py-5">
+                <button class="btn btn-error" id="done-all">Clear All</button>
+        </div>
+        
+
+    </main>
+    <footer>
+
+    </footer>
+    <script src="./js/todo.js"></script>
+</body>
+
+</html>
