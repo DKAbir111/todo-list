@@ -1,6 +1,6 @@
 
 //Add task
-let number = 0;
+document.getElementById("done-all").disabled = true;
 document.getElementById("add-task").addEventListener("click", function () {
     const takeTodo = document.getElementById("take-todo");
     const task = takeTodo.value;
@@ -12,7 +12,7 @@ document.getElementById("add-task").addEventListener("click", function () {
     div.classList.add("grid", "grid-cols-3", "gap-3", "mt-3", "item");
 
     div.innerHTML = `
-                <p class="text-center mt-2">${++number}</p>
+                <p class="text-center mt-2">${document.querySelectorAll('.item').length+1}</p>
                 <p class="text-center mt-2">${task}</p>
                 <div class="text-center">
                 <button class="btn btn-success item-delete">Done</button>
@@ -21,6 +21,7 @@ document.getElementById("add-task").addEventListener("click", function () {
        `;
     document.getElementById("task-list").appendChild(div);
     takeTodo.value = '';
+    document.getElementById("done-all").disabled = false;
     // Add event listener to the "Done" button for deleting the task
     const deleteButton = div.querySelector('.item-delete');
     deleteButton.addEventListener('click', function () {
@@ -32,18 +33,20 @@ document.getElementById("add-task").addEventListener("click", function () {
         }
         else {
             div.remove();
-            number--;
-
         }
-
-
+        if (document.querySelectorAll('.item').length === 0) {
+            document.getElementById("done-all").disabled = true;
+        }
+       
     });
 });
+
+
 
 //Delete all
 document.getElementById("done-all").addEventListener("click", function () {
     document.getElementById("task-list").innerHTML = '';
-    number = 0;
+    document.getElementById("done-all").disabled = true;
 });
 
 
